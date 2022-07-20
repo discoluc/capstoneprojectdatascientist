@@ -112,9 +112,14 @@ Historically there are two main prediction metods. The fundamental analysis whic
 The fast computational development has led to the point that Machine learning techniques have a significant application in financial problem. The use of artificial neural networks have found more and its way into the field of stock price prediction. Here a recurrent neural network (RNN) has found very proven, more precisely the Long Short Term Memory (LSTM). Its advantage being
 able to process entire sequences of data rather than only one single data point. It has proven to be very practial with time series data such our historical stock prices. 
 
-In this project, I create an application which is going to predict the \textbf{closing price} of any given stock for which it is trained on. For the sake of convenience this report only considers the stock price prediction of the \textbf{Apple} Inc. (\textit{\$AAPL}) stock. A train-test cycle is used to test the accuracy of the prediction.
+In this project, I create an application which is going to predict the \textbf{closing price} of any given stock for which it is trained on. For the sake of convenience this report only considers the stock price prediction of the \textbf{Apple} Inc. (\textit{\$AAPL}) stock.
 
-
+A train-test cycle is used to test the accuracy of the prediction. The root mean squared error (\ref{eq.rmse}) is used to measure the accuracy of the mode:
+\begin{equation}
+RMSE = \sqrt{\dfrac{\Sigma_{i}(\hat{y}_i-y_i)}{N}} 
+\label{eq.rmse}
+\end{equation}
+where $\hat{y}_i$ is the prediction of the $i-th$ stock price $y_i$ and $N$ is the total number of predicted stock prices.
 
 
 %------------------------------------------------
@@ -139,7 +144,7 @@ Ticker &       Name &       Date &  Open &  High &   Low &  Close &       {Volum
 \end{table*}
 
 \begin{table*}[hbt]
-	\caption{Statistics of the Apple stock prices}
+	\caption{Statistics of the Apple stock prices. Which represent our used features}
 	\centering
 \begin{tabular}{lS[table-auto-round,table-format=9.1] S[table-auto-round,table-format=9.1] S[table-auto-round,table-format=9.1] S[table-auto-round,table-format=9.1]S[table-auto-round,scientific-notation = engineering, table-format=-1.1e-1]  S[table-auto-round,table-format=9.0]}
 \toprule
@@ -191,10 +196,17 @@ In figure \ref{fig:results} the highly volatile closing price of the stock is sh
 
 \begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
 	\includegraphics[width=\linewidth]{LSTM}
-	\caption{The reccurent cell of a LSTM network.\cite{LSTM}}
+	\caption{The reccurent cell of a LSTM network \cite{LSTM}.}
 	\label{fig:lstm.network}
 \end{figure*}
 In figure \ref{fig:lstm.network} a recurrent cell of a LSTM network is shown.
+
+In order for the neural network to work properly the stock prices have to be normalized. This will help our model to converge faster and be more stable. Furthermore when using the scaler on the input features with different scales all features will contribute equally to the fitting and there will be no bias due to a different scaling. I am using the MinMaxScaler (\ref{eq.minmax}) of sci-kit learn.
+\begin{equation}
+x_{i,scaled}=\dfrac{x_i-min(x)}{max(x)-min(x)}
+\label{eq.minmax}
+\end{equation}
+
 
 
 \subsection{Data Preprocessing}
