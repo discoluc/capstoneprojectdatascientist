@@ -1,8 +1,7 @@
-from typing import final
 import numpy as np
 import pandas as pd
 import math
-import yfinance as yf
+
 import matplotlib.pyplot as plt
 from keras.models import Sequential
 from keras.layers import Dense, LSTM
@@ -12,156 +11,207 @@ from sklearn.preprocessing import MinMaxScaler
 #%matplotlib inline
 
 
-def get_stock_info(ticker):
-    """
-    Get the info about a ticker e.g. name of company.
-    ticker...Input the Ticker of a certain stock
-
-    output....json with stock info
-    """
-
-    stock_info = yf.Ticker(ticker).info
-    return stock_info
+# Read in the previously generated Apple Stock Price File
+apple_stock_prices = pd.read_csv("apple.csv")
+apple_stock_prices["Date"] = pd.to_datetime(apple_stock_prices["Date"])
 
 
-def get_hist_data(ticker, timeframe="max"):
-    """
-    Get the historical daily market data of a certain ticker for a certain period.
-    Market Date includes the open, close, high, low preices of the day and the trading volumen.
-
-    ticker... Input the ticker of the stock of interest
-    timeframe... the period of interest (1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max)
-
-    """
-
-    hist = yf.Ticker(ticker).history(period=timeframe)
-    return hist
+# Defining the target and the features
+y_target = apple_stock_prices["Close"].values.reshape(-1, 1)
+x_features = apple_stock_prices[["Open", "High", "Low"]].values
 
 
-def get_consol_hist_data(tickerlist, timeframe="10y"):
-    acc = []
-    for ticker in tickerlist:
-        print(ticker)
-        df = get_hist_data(ticker, timeframe)
-        df["Ticker"] = ticker
-        df["Date"] = df.index
-        acc.extend(df.values.tolist())
-    col_names = [
-        "Ticker",
-        "Date",
-        "Open",
-        "High",
-        "Low",
-        "Close",
-        "Volume",
-        "Dividends",
-        "Stock Splits",
-    ]
-    output_hist = pd.DataFrame(acc, columns=col_names)
-    return outpust_hist
-
-
-
-
-
-# Define the time window
-window = 70
-
-# Get all the data of GME which Yahoo offers
-final_data = get_hist_data("AAPL")
-
-# for the sake of convenience make all column names lower case
-final_data = final_data.rename(columns=str.lower)
-# reversing the dataframe to make the newest entry the first line
-# final_data = final_data[::-1]
-# generate date column from index
-final_data["date"] = final_data.index
-final_data = final_data.reset_index()
-
-
-#  plotting the date vs the closing stock price
-# plt.style.use('dark_background')
-final_data.plot("date", "close", color="red")
-
-short_data = final_data.head(window)
-
-short_data.plot("date", "close", color="green")
-
-plt.show()
-
-
-# getting the closing price and making it to an array
-df = final_data.filter(["close"]).values
-
-# scale data to be between 0 and 1
+# Scale Data using the min max scaler
 scaler = MinMaxScaler(feature_range=(0, 1))
-scaled_data = scaler.fit_transform(df)
+scaler2 = MinMaxScaler(feature_range=(0, 1))
+y_target_scaled = scaler.fit_transform(y_target)
+x_features_scaled = scaler2.fit_transform(x_features)
 
-# using a proportion of the data as training data
-train_data_len = math.ceil(len(df) * 0.75)
-train_data = scaled_data[0:train_data_len, :]
+data_scaled = np.concatenate((x_features_scaled, y_target_scaled), axis=1)
 
-# the ggeneration of the predictor variable and the independent ones. e.g x1 = 1-60 day
-# and y1 = 61, x2=2-61 and y2=62 and so on..
 
-x_train_data = []
-y_train_data = []
-for i in range(window, len(train_data)):
+def test_train_set_generator1D(df, window_size, training_set_size=0.8):
+    """
+    Since we are building a LSTM we cannot simply split the dataset, we need to build our feature set
+    going back a certain time e.g x = 0.day until 9.day and y = 10.day. So we can predict with the past 10 day
+    the 11. day. This is for a 1D feature set (feature set equals the target).
 
-    x_train_data.append(train_data[i - window : i, 0])
-    y_train_data.append(train_data[i, 0])
+    Input
+    df... a 1D array containing the target/feature variable
+    window size...how many days are we going back in time to predict the value
+    training_set_size... percentage of the whole set which will be the training set
 
-    # c onverting the training data to numpy arrays
-    x_train_data1, y_train_data1 = np.array(x_train_data), np.array(y_train_data)
-    x_train_data2 = np.reshape(
-        x_train_data1, (x_train_data1.shape[0], x_train_data1.shape[1], 1)
+    Output:
+    x_test, y_test ...the feature and target for the training set
+    x_train, x_test... the feature and target for the test set
+    train_data_len ... the size of the training set
+    """
+
+    x, y = [], []
+    for i in range(window_size, len(df)):
+        x.append(df[i - window_size : i])
+        y.append(df[i])
+    x, y = np.array(x), np.array(y)
+    train_data_len = int(math.ceil(len(df) * training_set_size))
+    x_train, x_test = x[:train_data_len], x[train_data_len - window_size :]
+    y_train, y_test = y[:train_data_len], df[train_data_len:]
+    x_train = np.reshape(x_train, (x_train.shape[0], x_train.shape[1], 1))
+    x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
+
+    return x_train, x_test, y_train, y_test, train_data_len
+
+
+def plot_model_performance(train, test, detail_days=60):
+    """
+    Plotting the predicted price vs the actual price. Including a second graph with a detail view
+    (including detail_days last observations)
+
+    Input
+    train...the training dataset
+    test ... the testing dataset
+    detail_days...how many last observations do you want to have displayed
+    """
+
+    plt.xlabel("Date")
+    plt.ylabel("Close Price [in USD]")
+    plt.gcf().autofmt_xdate(rotation=45)
+    plt.plot(train["Date"], train["Close"])
+    plt.plot(test["Date"], test["Close"])
+    plt.plot(test["Date"], test["Predictions"])
+
+    plt.legend(["Training", "Test", "Predictions"], loc="lower right")
+
+    plt.show()
+
+    plt.xlabel("Date")
+    plt.ylabel("Close Price [in USD]")
+    plt.gcf().autofmt_xdate(rotation=45)
+
+    plt.plot(test["Date"][-abs(detail_days) :], test["Close"][-abs(detail_days) :])
+    plt.plot(
+        test["Date"][-abs(detail_days) :], test["Predictions"][-abs(detail_days) :]
     )
 
+    plt.legend(["Training", "Test", "Predictions"], loc="lower right")
 
-model = Sequential()
-model.add(
-    LSTM(units=50, return_sequences=True, input_shape=(x_train_data2.shape[1], 1))
-)
-model.add(LSTM(units=50, return_sequences=False))
-model.add(Dense(units=25))
-model.add(Dense(units=1))
+    plt.show()
 
-model.compile(optimizer="adam", loss="mean_squared_error")
-
-model.fit(x_train_data2, y_train_data1, batch_size=1, epochs=1)
+    print(test.tail(abs(detail_days)))
 
 
-# generating test data, beginning with the first data to predict after the train data lewn
-test_data = scaled_data[train_data_len - window :, :]
-x_test = []
-y_test = df[train_data_len:, :]
-for i in range(window, len(test_data)):
-    x_test.append(test_data[i - window : i, 0])
+def simple_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8):
+    """
+    Building a simple LSTM model, which only uses the closing price as a feature to
+    predict the closing price
 
-# converting the training data to numpy arrays
-x_test = np.array(x_test)
-x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
+    df...Is a dataframe containing already scaled stock prices (Open, Close, Low, High)
+    window_size...How many days is our model looking in the past
+    training_set_size...What part of the data set is used to train the model
+    units...the number of neurons
+    epochs...How many times are you going through the model
 
-# making pred
-pred = model.predict(x_test)
-# translate the pred back to dollar values
-pred = scaler.inverse_transform(pred)
+    """
 
-rmse = np.sqrt(np.mean(((pred - y_test) ** 2)))
-print(rmse)
+    target = df[:, -1]
+    x_train, x_test, y_train, y_test, train_data_len = test_train_set_generator1D(
+        target, window_size, training_set_size
+    )
 
-train = final_data[:train_data_len]
-test = final_data[train_data_len:]
+    model = Sequential()
+    model.add(
+        LSTM(
+            units=units,
+            activation="relu",
+            return_sequences=False,
+            input_shape=(x_train.shape[1], 1),
+        )
+    )
+    model.add(Dense(units=1))
 
-test["Predictions"] = pred
+    model.compile(optimizer="adam", loss="mean_squared_error")
+    model.summary()
 
-plt.title("Model")
-plt.xlabel("Date")
-plt.ylabel("Close")
+    model.fit(x_train, y_train, batch_size=1, epochs=epochs)
 
-plt.plot(train["close"])
-plt.plot(test[["close", "Predictions"]])
+    # making pred
+    pred = model.predict(x_test)
+    # translate the pred back to dollar values
+    pred = scaler.inverse_transform(pred)
+    y_test = scaler.inverse_transform(y_test.reshape(-1, 1))
 
-plt.legend(["Training", "Test", "Predictions"], loc="lower right")
+    rmse = np.sqrt(np.mean(((pred - y_test) ** 2)))
+    print("The root mean square erros is " + str(rmse))
 
-plt.show()
+    train = apple_stock_prices[:train_data_len]
+    test = apple_stock_prices[train_data_len:]
+
+    test["Predictions"] = pred
+
+    plot_model_performance(train, test, -50)
+
+
+def refined_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8):
+    """
+    Building a simple LSTM model, which only uses the closing price as a feature to
+    predict the closing price
+
+    df...Is a dataframe containing already scaled stock prices (Open, Close, Low, High)
+    window_size...How many days is our model looking in the past
+    training_set_size...What part of the data set is used to train the model
+    units...the number of neurons
+    epochs...How many times are you going through the model
+
+    """
+
+    target = df[:, -1]
+    x_train, x_test, y_train, y_test, train_data_len = test_train_set_generator1D(
+        target, window_size, training_set_size
+    )
+
+    model = Sequential()
+    model.add(
+        LSTM(
+            units=units,
+            activation="relu",
+            return_sequences=True,
+            input_shape=(x_train.shape[1], 1),
+        )
+    )
+    model.add(LSTM(units=units, activation="relu", return_sequences=False))
+    model.add(Dense(units=25))
+    model.add(Dense(units=1))
+
+    model.compile(optimizer="adam", loss="mean_squared_error")
+    model.summary()
+
+    model.fit(x_train, y_train, batch_size=1, epochs=epochs)
+
+    # making pred
+    pred = model.predict(x_test)
+    # translate the pred back to dollar values
+    pred = scaler.inverse_transform(pred)
+    y_test = scaler.inverse_transform(y_test.reshape(-1, 1))
+
+    rmse = np.sqrt(np.mean(((pred - y_test) ** 2)))
+    print("The root mean square erros is " + str(rmse))
+
+    train = apple_stock_prices[:train_data_len]
+    test = apple_stock_prices[train_data_len:]
+
+    test["Predictions"] = pred
+
+    plot_model_performance(train, test, -50)
+
+
+# First call of the simple model
+simple_model(data_scaled, epochs=1, units=10, window_size=30, training_set_size=0.8)
+
+# Second call of the simple model with more refined parameters
+simple_model(data_scaled, epochs=5, units=50, window_size=30, training_set_size=0.8)
+
+
+# First call of the simple model
+refined_model(data_scaled, epochs=1, units=10, window_size=30, training_set_size=0.8)
+
+# Second call of the simple model with more refined parameters
+refined_model(data_scaled, epochs=5, units=50, window_size=30, training_set_size=0.8)
