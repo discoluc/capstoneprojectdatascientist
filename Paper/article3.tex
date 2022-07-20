@@ -23,12 +23,17 @@
 \documentclass[fleqn,10pt]{SelfArx} % Document font size and equations flushed left
 
 \usepackage[english]{babel} % Specify a different language here - english by default
-
+\usepackage[numbers]{natbib}
+\usepackage{url}
 \usepackage{lipsum} % Required to insert dummy text. To be removed otherwise
 
 \usepackage{tcolorbox}
+\usepackage{siunitx}
 \tcbuselibrary{xparse}
-
+\sisetup{
+    group-digits=true,
+    group-separator={\,},
+}
 %----------------------------------------------------------------------------------------
 %	COLUMNS
 %----------------------------------------------------------------------------------------
@@ -81,7 +86,8 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\Abstract{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla. Curabitur auctor semper nulla. Donec varius orci eget risus. Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam. Duis eget orci sit amet orci dignissim rutrum.}
+\Abstract{Accurately predicting stock prices is a highly sought after mastery. In recent developments Long Short Term Memory, a type of recurrent neural network, have proven to be highly promising in achieving better predictions.
+todo: add 3-10 sentences blabla + result + methodology}
 
 %----------------------------------------------------------------------------------------
 
@@ -118,23 +124,44 @@ In this project, I create an application which is going to predict the \textbf{c
 \begin{table*}[hbt]
 	\caption{First lines of \textit{Apple Inc.} stock prices dataset}
 	\centering
-\begin{tabular}{lllrrrrrrr}
+\begin{tabular}{lllrrrr S[table-auto-round,table-format=9.0] rr}
 \toprule
-Ticker &       Name &       Date &  Open &  High &   Low &  Close &       Volume &  Dividends &  Stock Splits \\
+Ticker &       Name &       Date &  Open &  High &   Low &  Close &       {Volume} &  Dividends &  Stock Splits \\
 \midrule
-  AAPL & Apple Inc. & 2012-07-19 & 18.77 & 18.90 & 18.61 &  18.87 & 436861600.00 &       0.00 &          0.00 \\
-  AAPL & Apple Inc. & 2012-07-20 & 18.83 & 18.87 & 18.54 &  18.56 & 397471200.00 &       0.00 &          0.00 \\
-  AAPL & Apple Inc. & 2012-07-23 & 18.25 & 18.61 & 18.05 &  18.54 & 487975600.00 &       0.00 &          0.00 \\
-  AAPL & Apple Inc. & 2012-07-24 & 18.65 & 18.72 & 18.38 &  18.45 & 565132400.00 &       0.00 &          0.00 \\
-  AAPL & Apple Inc. & 2012-07-25 & 17.64 & 17.84 & 17.51 &  17.66 & 877312800.00 &       0.00 &          0.00 \\
+  AAPL & Apple Inc. & 2012-07-19 & 18.77 & 18.90 & 18.61 &  18.87 & 436861600.00 &       0 &          0 \\
+  AAPL & Apple Inc. & 2012-07-20 & 18.83 & 18.87 & 18.54 &  18.56 & 397471200.00 &       0 &          0 \\
+  AAPL & Apple Inc. & 2012-07-23 & 18.25 & 18.61 & 18.05 &  18.54 & 487975600.00 &       0 &          0 \\
+  AAPL & Apple Inc. & 2012-07-24 & 18.65 & 18.72 & 18.38 &  18.45 & 565132400.00 &       0 &          0 \\
+  AAPL & Apple Inc. & 2012-07-25 & 17.64 & 17.84 & 17.51 &  17.66 & 877312800.00 &       0 &          0 \\
 \bottomrule
 \end{tabular}
 	\label{tab:df.head}
 \end{table*}
 
+\begin{table*}[hbt]
+	\caption{Statistics of the Apple stock prices}
+	\centering
+\begin{tabular}{lS[table-auto-round,table-format=9.1] S[table-auto-round,table-format=9.1] S[table-auto-round,table-format=9.1] S[table-auto-round,table-format=9.1]S[table-auto-round,scientific-notation = engineering, table-format=-1.1e-1]  S[table-auto-round,table-format=9.0]}
+\toprule
+{} &         {Open} &         {High} &          {Low}&        {Close}              \\
+\midrule
+count &  2514.000000 &  2514.000000 &  2514.000000 &  2514.000000  \\
+mean  &    54.976304 &    55.586809 &    54.385991 &    55.010195 \\
+std   &    45.998891 &    46.593796 &    45.425948 &    46.036470  \\
+min   &    12.090742 &    12.453181 &    12.001301 &    12.170523  \\
+25\%   &    22.846671 &    23.103172 &    22.672594 &    22.848148 \\
+50\%   &    36.503730 &    36.712400 &    36.239020 &    36.499804  \\
+75\%   &    66.667990 &    68.501637 &    65.989975 &    67.521479  \\
+max   &   182.630005 &   182.940002 &   179.119995 &   182.009995  \\
+\bottomrule
+\end{tabular}
+	\label{tab:df.statistrics}
+\end{table*}
+
+
 The dataset was collected with the help of \tcboxverb{yfinance} python plugin. In my case it is replacing the not working Yahoo Finance API. The collected dataframe contains
 \begin{itemize}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
-	\item $1.108.837$ rows
+	\item \num{1108837} rows
 	\item $10$ columns
 	\item price information for $457$ unique stocks
 	\item Data of the last 10 years (including 17/07/2022)
@@ -144,38 +171,19 @@ The structure and the first 5 lines of the table filtered for \textit{Apple Inc.
 when opening the market (\textit{Open}), closing the market (\textit{Close}). Furthermore there the days lowest (\textit{Low}) and highest 
 intra-day price (\textit{High} is available, as well as the daily traded volume (\textit{Volume}).
 
+
+Looking at the \textit{Apple Inc.} stock there are 2514 columns regarding the apple stock with a minimum closing price of $12.17$ and a maximum closing price of $182.01$. There are no missing values (see table \ref{tab:df.statistrics}) in the dataset, and the date and value columns are correctly set as a datetime respectively float columns. In table \ref{tab:df.statistrics} the statistics of the distinctive variables are shown.
+
 \begin{figure}[ht]\centering
 	\includegraphics[width=\linewidth]{closing}
 	\caption{Closing price of the \textit{Apple Inc.} in the last 10 years.}
 	\label{fig:results}
 \end{figure}
-Looking at the \textit{Apple Inc.} stock there are 2514 columns regarding the apple stock with a minimum closing price of $12.17$ and a maximum closing price of $182.01$. There are no missing values in the dataset, and the date and value columns are correctly set as a datetime respectively float columns.
 
-\begin{equation}
-	\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
-	\label{eq:refname2}
-\end{equation}
+In figure \ref{fig:results} the highly volatile closing price of the stock is shown for its last 10 years. In recent years the stocke prices have incresead roughly sevenfold. 
 
 
-\begin{enumerate}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
-	\item First item in a list
-	\item Second item in a list
-	\item Third item in a list
-\end{enumerate}
 
-\subsection{Subsection}
-
-\lipsum[6] % Dummy text
-
-\paragraph{Paragraph} \lipsum[7] % Dummy text
-\paragraph{Paragraph} \lipsum[8] % Dummy text
-
-\subsection{Subsection}
-
-\lipsum[9] % Dummy text
-
-
-Reference to Figure \ref{fig:results}.
 
 %------------------------------------------------
 
@@ -183,11 +191,11 @@ Reference to Figure \ref{fig:results}.
 
 \begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
 	\includegraphics[width=\linewidth]{LSTM}
-	\caption{The reccurent cell of a LSTM network.}
-	\label{fig:view}
+	\caption{The reccurent cell of a LSTM network.\cite{LSTM}}
+	\label{fig:lstm.network}
 \end{figure*}
+In figure \ref{fig:lstm.network} a recurrent cell of a LSTM network is shown.
 
-\lipsum[10] % Dummy text
 
 \subsection{Data Preprocessing}
 
@@ -235,18 +243,14 @@ Reference to Figure \ref{fig:results}.
 
 %------------------------------------------------
 
-\phantomsection
-\section*{Acknowledgments} % The \section*{} command stops section numbering
 
-%\addcontentsline{toc}{section}{Acknowledgments} % Adds this section to the table of contents
-
-So long and thanks for all the fish \cite{Figueredo:2009dg, Smith:2012qr}.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
 
 \phantomsection
+\addcontentsline{toc}{section}{References} % Adds this section to the table of contents
 \bibliographystyle{unsrt}
 \bibliography{sample.bib}
 

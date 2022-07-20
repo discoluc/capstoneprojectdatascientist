@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2022.7.15)  18 JUL 2022 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2022.7.15)  19 JUL 2022 17:27
 entering extended mode
 **./article3.tex
 (article3.tex
@@ -368,6 +368,17 @@ Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 (babel)             (\language73). Reported on input line 108.
 ))
+(C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip70
+\bibsep=\skip71
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count289
+)
+(C:\Program Files\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/lipsum\lipsum.sty
 (C:\Program Files\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
 (C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty
@@ -375,15 +386,15 @@ Package: expl3 2021-08-27 L3 programming layer (loader)
 
 (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count289
+\l__color_backend_stack_int=\count290
 \l__pdf_internal_box=\box55
 ))
 Package: l3keys2e 2021-08-27 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count290
-\l__lipsum_a_int=\count291
-\l__lipsum_b_int=\count292
+\g__lipsum_par_int=\count291
+\l__lipsum_a_int=\count292
+\l__lipsum_b_int=\count293
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
 (C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
@@ -430,14 +441,14 @@ Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@yd=\dimen257
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count293
-\c@pgf@countb=\count294
-\c@pgf@countc=\count295
-\c@pgf@countd=\count296
+\c@pgf@counta=\count294
+\c@pgf@countb=\count295
+\c@pgf@countc=\count296
+\c@pgf@countd=\count297
 \t@pgf@toka=\toks32
 \t@pgf@tokb=\toks33
 \t@pgf@tokc=\toks34
-\pgf@sys@id@count=\count297
+\pgf@sys@id@count=\count298
 
 (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
@@ -452,8 +463,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 )))
 (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count298
-\pgfsyssoftpath@bigbuffer@items=\count299
+\pgfsyssoftpath@smallbuffer@items=\count299
+\pgfsyssoftpath@bigbuffer@items=\count300
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -466,7 +477,7 @@ Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex)
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
 \pgfmath@dimen=\dimen258
-\pgfmath@count=\count300
+\pgfmath@count=\count301
 \pgfmath@box=\box57
 \pgfmath@toks=\toks35
 \pgfmath@stack@operand=\toks36
@@ -486,7 +497,7 @@ tex)
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmeti
 cs.code.tex)))
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count301
+\c@pgfmathroundto@lastzeros=\count302
 ))
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfint.code.tex)
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
@@ -522,7 +533,7 @@ File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box58
 \pgf@hbox=\box59
 \pgf@layerbox@main=\box60
-\pgf@picture@serial@count=\count302
+\pgf@picture@serial@count=\count303
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.te
 x
@@ -549,8 +560,8 @@ File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen282
-\pgf@sys@shading@range@num=\count303
-\pgf@shadingcount=\count304
+\pgf@sys@shading@range@num=\count304
+\pgf@shadingcount=\count305
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -600,36 +611,84 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@upperbox=\box64
 \tcb@lowerbox=\box65
 \tcb@phantombox=\box66
-\c@tcbbreakpart=\count305
-\c@tcblayer=\count306
-\c@tcolorbox@number=\count307
+\c@tcbbreakpart=\count306
+\c@tcblayer=\count307
+\c@tcolorbox@number=\count308
 \tcb@temp=\box67
 \tcb@temp=\box68
 \tcb@temp=\box69
 \tcb@temp=\box70
 )
-(C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcbxparse.code.tex
-Library (tcolorbox): 'tcbxparse.code.tex' version '4.51'
-(C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
-Package: xparse 2021-08-27 L3 Experimental document command parser
-))
-(C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+(C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2022-06-22 v3.1.4 A comprehensive (SI) units package
+\l__siunitx_angle_tmp_dim=\dimen285
+\l__siunitx_angle_marker_box=\box71
+\l__siunitx_angle_unit_box=\box72
+\l__siunitx_compound_count_int=\count309
 
-(C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-)
-(C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+(C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/translations\translations.st
+y
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+ (C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
+(C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)
+))
+\l__siunitx_number_exponent_fixed_int=\count310
+\l__siunitx_number_min_decimal_int=\count311
+\l__siunitx_number_min_integer_int=\count312
+\l__siunitx_number_round_precision_int=\count313
+\l__siunitx_number_group_first_int=\count314
+\l__siunitx_number_group_size_int=\count315
+\l__siunitx_number_group_minimum_int=\count316
+\l__siunitx_table_tmp_box=\box73
+\l__siunitx_table_tmp_dim=\dimen286
+\l__siunitx_table_column_width_dim=\dimen287
+\l__siunitx_table_integer_box=\box74
+\l__siunitx_table_decimal_box=\box75
+\l__siunitx_table_before_box=\box76
+\l__siunitx_table_after_box=\box77
+\l__siunitx_table_before_dim=\dimen288
+\l__siunitx_table_carry_dim=\dimen289
+\l__siunitx_unit_tmp_int=\count317
+\l__siunitx_unit_position_int=\count318
+\l__siunitx_unit_total_int=\count319
+
+(C:\Program Files\MiKTeX\tex/latex/tools\array.sty
+Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
+\col@sep=\dimen290
+\ar@mcellbox=\box78
+\extrarowheight=\dimen291
+\NC@list=\toks40
+\extratabsurround=\skip72
+\backup@length=\skip73
+\ar@cellbox=\box79
+))
+(C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcbxparse.code.tex
+Library (tcolorbox): 'tcbxparse.code.tex' version '4.51'
+(C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2021-08-27 L3 Experimental document command parser
+))
+
+Package siunitx Info: Option "group-digits = true" has been deprecated in this
+(siunitx)             release.
+(siunitx)             
+(siunitx)             Use "group-digits = all" as a replacement.
+
+
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
@@ -651,9 +710,9 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 )
-\@linkdim=\dimen285
-\Hy@linkcounter=\count308
-\Hy@pagecounter=\count309
+\@linkdim=\dimen292
+\Hy@linkcounter=\count320
+\Hy@pagecounter=\count321
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
@@ -670,7 +729,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count310
+\Hy@SavedSpaceFactor=\count322
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
@@ -684,14 +743,9 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count311
-
-(C:\Program Files\MiKTeX\tex/latex/url\url.sty
-\Urlmuskip=\muskip17
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
+\c@Hy@tempcnt=\count323
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen286
+\XeTeXLinkMargin=\dimen293
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -700,9 +754,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count312
-\Field@Width=\dimen287
-\Fld@charsize=\dimen288
+\Fld@menulength=\count324
+\Field@Width=\dimen294
+\Fld@charsize=\dimen295
 Package hyperref Info: Hyper figures OFF on input line 6076.
 Package hyperref Info: Link nesting OFF on input line 6081.
 Package hyperref Info: Hyper index ON on input line 6084.
@@ -716,9 +770,9 @@ LaTeX Info: Redefining \pageref on input line 6150.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count313
-\c@Item=\count314
-\c@Hfootnote=\count315
+\Hy@abspage=\count325
+\c@Item=\count326
+\c@Hfootnote=\count327
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -730,8 +784,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count316
-\c@bookmark@seq@number=\count317
+\Fld@listcount=\count328
+\c@bookmark@seq@number=\count329
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/rerunfilecheck\rerunfilechec
 k.sty
@@ -744,50 +798,50 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip70
+\Hy@SectionHShift=\skip74
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 62.
-Package hyperref Info: Option `breaklinks' set `true' on input line 62.
-Package hyperref Info: Option `bookmarksopen' set `false' on input line 62.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 8
-8.
+Package hyperref Info: Option `colorlinks' set `true' on input line 67.
+Package hyperref Info: Option `breaklinks' set `true' on input line 67.
+Package hyperref Info: Option `bookmarksopen' set `false' on input line 67.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 9
+4.
  (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (article3.aux)
 \openout1 = `article3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
  (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count318
-\scratchdimen=\dimen289
-\scratchbox=\box71
-\nofMPsegments=\count319
-\nofMParguments=\count320
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count321
-\MPscratchDim=\dimen290
-\MPnumerator=\count322
-\makeMPintoPDFobject=\count323
-\everyMPtoPDFconversion=\toks41
+\scratchcounter=\count330
+\scratchdimen=\dimen296
+\scratchbox=\box80
+\nofMPsegments=\count331
+\nofMParguments=\count332
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count333
+\MPscratchDim=\dimen297
+\MPnumerator=\count334
+\makeMPintoPDFobject=\count335
+\everyMPtoPDFconversion=\toks42
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -798,7 +852,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 88.
+(lastpage)             ! on input line 94.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -837,25 +891,30 @@ Package lastpage Info: Please have a look at the pageslts package at
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 88.
-Package microtype Info: Applying patch `item' on input line 88.
-Package microtype Info: Applying patch `toc' on input line 88.
-Package microtype Info: Applying patch `eqnum' on input line 88.
-Package microtype Info: Applying patch `footnote' on input line 88.
+LaTeX Info: Redefining \microtypecontext on input line 94.
+Package microtype Info: Applying patch `item' on input line 94.
+Package microtype Info: Applying patch `toc' on input line 94.
+Package microtype Info: Applying patch `eqnum' on input line 94.
+Package microtype Info: Applying patch `footnote' on input line 94.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 88.
+LaTeX Info: Redefining \showhyphens on input line 94.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-Package hyperref Info: Link coloring ON on input line 88.
+(C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/translations/dicts\translati
+ons-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package hyperref Info: Link coloring ON on input line 94.
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -867,17 +926,17 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ing.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count324
+\c@section@level=\count336
 )
-LaTeX Info: Redefining \ref on input line 88.
-LaTeX Info: Redefining \pageref on input line 88.
-LaTeX Info: Redefining \nameref on input line 88.
+LaTeX Info: Redefining \ref on input line 94.
+LaTeX Info: Redefining \pageref on input line 94.
+LaTeX Info: Redefining \nameref on input line 94.
  (article3.out) (article3.out)
 \@outlinefile=\write4
 \openout4 = `article3.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 9
-1.
+7.
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/psnfss\ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
@@ -887,7 +946,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 91.
+ 97.
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
@@ -897,19 +956,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 91.
+ 97.
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/psnfss\omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 91.
+ 97.
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/psnfss\omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 91.
+ 97.
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/psnfss\omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
@@ -921,27 +980,27 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 91.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 97.
 
 (article3.toc
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
-1.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 7
+.
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/psnfss\ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
@@ -955,13 +1014,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 \openout5 = `article3.toc'.
 
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-09.
+15.
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-35.
+62.
 
 (C:\Users\Q377613\AppData\Roaming\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -974,60 +1033,54 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 ]
-<Figures//closing.png, id=99, 904.37875pt x 591.20876pt>
+<Figures//closing.png, id=96, 966.61125pt x 565.11125pt>
 File: Figures//closing.png Graphic file (type png)
 <use Figures//closing.png>
-Package pdftex.def Info: Figures//closing.png  used on input line 148.
-(pdftex.def)             Requested size: 242.41745pt x 158.46477pt.
-<Figures//LSTM.png, id=102, 1284.8pt x 879.285pt>
+Package pdftex.def Info: Figures//closing.png  used on input line 178.
+(pdftex.def)             Requested size: 242.41745pt x 141.72585pt.
+<Figures//LSTM.png, id=99, 1284.8pt x 879.285pt>
 File: Figures//LSTM.png Graphic file (type png)
 <use Figures//LSTM.png>
-Package pdftex.def Info: Figures//LSTM.png  used on input line 185.
+Package pdftex.def Info: Figures//LSTM.png  used on input line 193.
 (pdftex.def)             Requested size: 500.484pt x 342.51727pt.
- [2 <./Figures//closing.png>] [3 <./Figures//LSTM.png>] [4] [5] [6]
+ [2 <./Figures//closing.png>] [3 <./Figures//LSTM.png>] [4] [5] [6] (article3.b
+bl
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+\OT1/pcr/m/n/10 org / wiki / Long _ short-[]term _ memory #
+ []
 
-LaTeX Warning: Citation `Figueredo:2009dg' on page 7 undefined on input line 24
-3.
 
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+\OT1/pcr/m/n/10 /media / File : LSTM _ Cell . svg$[][]\OT1/ptm/m/n/10 (+20) .  
+Ac-cessed:
+ []
 
-LaTeX Warning: Citation `Smith:2012qr' on page 7 undefined on input line 243.
-
-No file article3.bbl.
-
+) 
 AED: lastpage setting LastPage
-[7] (article3.aux)
+[7
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+] (article3.aux)
 Package rerunfilecheck Info: File `article3.out' has not changed.
-(rerunfilecheck)             Checksum: 11BA08DBFCFDB8ECD9FB637FE3491B55;1514.
+(rerunfilecheck)             Checksum: AD2F34DC09E3A49BFBD7D9F1BECFB81F;1393.
  ) 
 Here is how much of TeX's memory you used:
- 25772 strings out of 478927
- 460536 string characters out of 2862386
- 902803 words of memory out of 3000000
- 42808 multiletter control sequences out of 15000+600000
- 466336 words of font info for 313 fonts, out of 8000000 for 9000
+ 29580 strings out of 478927
+ 573081 string characters out of 2862386
+ 992909 words of memory out of 3000000
+ 46620 multiletter control sequences out of 15000+600000
+ 465148 words of font info for 300 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,13n,83p,1007b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{figure.caption.4} has been referenced but does no
-t exist, replaced by a fixed one
-
-{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/uc
-rr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Progr
-am Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fo
-nts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/sym
-bol/usyr.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/font
-s/type1/urw/times/utmri8a.pfb>
-Output written on article3.pdf (7 pages, 237206 bytes).
+ 83i,12n,83p,1007b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1
+/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8
+a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program 
+Files/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX/font
+s/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utm
+r8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on article3.pdf (7 pages, 231508 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
- 98943 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 185 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
+ 100983 words of extra memory for PDF output out of 106986 (max. 10000000)
 
