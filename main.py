@@ -71,20 +71,20 @@ def plot_model_performance(train, test, detail_days=60):
     test ... the testing dataset
     detail_days...how many last observations do you want to have displayed
     """
-
-    plt.xlabel("Date")
-    plt.ylabel("Close Price [in USD]")
+    plt.figure(figsize=(15, 10))
+    plt.xlabel("Date", fontsize=25)
+    plt.ylabel("Close Price [in USD]", fontsize=25)
     plt.gcf().autofmt_xdate(rotation=45)
     plt.plot(train["Date"], train["Close"])
     plt.plot(test["Date"], test["Close"])
     plt.plot(test["Date"], test["Predictions"])
 
-    plt.legend(["Training", "Test", "Predictions"], loc="lower right")
+    plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={'size': 15})
 
     plt.show()
-
-    plt.xlabel("Date")
-    plt.ylabel("Close Price [in USD]")
+    plt.figure(figsize=(15, 10))
+    plt.xlabel("Date", fontsize=25)
+    plt.ylabel("Close Price [in USD]", fontsize=25)
     plt.gcf().autofmt_xdate(rotation=45)
 
     plt.plot(test["Date"][-abs(detail_days) :], test["Close"][-abs(detail_days) :])
@@ -92,7 +92,7 @@ def plot_model_performance(train, test, detail_days=60):
         test["Date"][-abs(detail_days) :], test["Predictions"][-abs(detail_days) :]
     )
 
-    plt.legend(["Training", "Test", "Predictions"], loc="lower right")
+    plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={'size': 15})
 
     plt.show()
 
@@ -177,7 +177,14 @@ def refined_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8)
             input_shape=(x_train.shape[1], 1),
         )
     )
-    model.add(LSTM(units=units, activation="relu", return_sequences=False))
+    model.add(
+        LSTM(
+            units=units,
+            activation="relu",
+            return_sequences=False,
+          
+        )
+    )
     model.add(Dense(units=25))
     model.add(Dense(units=1))
 
@@ -203,15 +210,16 @@ def refined_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8)
     plot_model_performance(train, test, -50)
 
 
-# First call of the simple model
-simple_model(data_scaled, epochs=1, units=10, window_size=30, training_set_size=0.8)
 
 # Second call of the simple model with more refined parameters
-simple_model(data_scaled, epochs=5, units=50, window_size=30, training_set_size=0.8)
+simple_model(data_scaled, epochs=1, units=10, window_size=30, training_set_size=0.8)
 
-
-# First call of the simple model
 refined_model(data_scaled, epochs=1, units=10, window_size=30, training_set_size=0.8)
 
 # Second call of the simple model with more refined parameters
-refined_model(data_scaled, epochs=5, units=50, window_size=30, training_set_size=0.8)
+refined_model(data_scaled, epochs=1, units=50, window_size=30, training_set_size=0.8)
+
+# Second call of the simple model with more refined parameters
+refined_model(data_scaled, epochs=5, units=150, window_size=30, training_set_size=0.8)
+
+
