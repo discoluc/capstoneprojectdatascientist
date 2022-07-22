@@ -21,12 +21,12 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[fleqn,10pt]{SelfArx} % Document font size and equations flushed left
-
+\usepackage{float}
 \usepackage[english]{babel} % Specify a different language here - english by default
 \usepackage[numbers]{natbib}
 \usepackage{url}
 \usepackage{lipsum} % Required to insert dummy text. To be removed otherwise
-
+\usepackage{tabularx}
 \usepackage{tcolorbox}
 \usepackage{siunitx}
 \tcbuselibrary{xparse}
@@ -194,63 +194,87 @@ In figure \ref{fig:results} the highly volatile closing price of the stock is sh
 
 \section{Methodology}
 
-\begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\includegraphics[width=\linewidth]{LSTM}
+\begin{figure*}[tb]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\includegraphics[scale=0.3]{LSTM}
 	\caption{The reccurent cell of a LSTM network \cite{LSTM}.}
 	\label{fig:lstm.network}
 \end{figure*}
-In figure \ref{fig:lstm.network} a recurrent cell of a LSTM network is shown.
 
-In order for the neural network to work properly the stock prices have to be normalized. This will help our model to converge faster and be more stable. Furthermore when using the scaler on the input features with different scales all features will contribute equally to the fitting and there will be no bias due to a different scaling. I am using the MinMaxScaler (\ref{eq.minmax}) of sci-kit learn.
+Here, I am using a Recurrent Neural Network for the stock price prediction. More specifically a Long Short Term Memory Network is used to build the model. These networks are capable of learning long-term dependencies and are commonly used for handling and forecasting time-series data. In figure \ref{fig:lstm.network} a recurrent cell of a LSTM network is shown. Each cell consists of three gates, an input gate, an output gate and a forget gate. 
+
+Those cells are linked together to a chain, where each cell looks at the input gate at the previous hidden state $h_{t-1}$,the current input $x_t$, and the previous cell state $c_{t-1}$. The forget cell is the first part where $h_{t-1}$ and $x_t$ are passed through the sigmoid activation function and pointwise multiplied with the cell state $c_{t-1}$. The input gates combines a sigmoid and tanh layer, here it is decided which parts are going to be updated. Multiplying both layers determines which information is used to update the cell state by pointwise adding it the the output of the forget gate, resulting in the final $c_t$.
+In the output gate the same input ($h_{t-1}$ and $x_t$) is passed through a sigmoid function and finally multiplied with the current cell state $c_t$, yielding the final output the hidden state $h_t$.
+
+In order for the LSTM to work properly the stock closing prices have to be normalized. This will help our model to converge faster and be more stable. Furthermore when using the scaler on more than one input features with different scales all features will contribute equally to the fitting and there will be no bias due to a different scaling. I am using the MinMaxScaler (\ref{eq.minmax}) of sci-kit learn.
 \begin{equation}
 x_{i,scaled}=\dfrac{x_i-min(x)}{max(x)-min(x)}
 \label{eq.minmax}
 \end{equation}
 
+Here, I am trying to predict future stock prices $y_t$ (target) with the help of the previous $n$ stock prices. For example I am predicting the stock price from day 11 using day 1 to 10 as my features, for day 12, using day 2-11 and so on. In order to do this I defined a splitting function which generates me a data sample consisting of $n$ samples (the previous stock prices) and the target value $n + 1$. $n$ is denoting the size of my window which I am using to predict the prices. This function is applied to my previously scaled stock prices. 
 
+Finally I split this data set in a training and a test set, since we are dealing with a time-series we cannot randomly select the samples, rather I split the sample at some point. In my experiment I am using $80\%$ as a training set and the remaining $20\%$ as my test set. Using the predicted stock price $\hat{y}_i$ and the real stock price $y_t$ of the test set the RMSE can be easily calculated using eq. \ref{eq.rmse}.
 
-\subsection{Data Preprocessing}
+\begin{table*}[hbt]
+	\caption{Overview of the model parameters.}
+	\centering
+\begin{tabular}{lcccccc}
+\hline
+Model & LSTM 1 & LSTM 2 & Dense 1 & Dense 2 & Epoch & $n$ \\ 
+\hline 
+simple & 10 & - & 1 & - & 1 & 30 \\ 
 
-\lipsum[11] % Dummy text
+refined 1 & 10 & 10 & 25 & 1 & 1 & 30 \\ 
 
+refined 2 & 50 & 50 & 25 & 1 & 1 & 30 \\ 
 
+refined 3 & 150 & 150 & 25 & 1 & 5 & 30 \\
+\end{tabular}
 
-\subsubsection{Subsubsection}
+\label{table.model} 
+\end{table*}
 
-\lipsum[12] % Dummy text
+The first \textbf{simple model} I build, consisted of a single LSTM layer with 10 neurons and a dense Layer with 1 neuron. The dense layer is needed to get the dimensionality of the output of the LSTM $h_t$ back to a 1D output. I am using the previous thirty close prices ($n=30$) as my input $x_t$.
 
-\begin{description}
-	\item[Word] Definition
-	\item[Concept] Explanation
-	\item[Idea] Text
-\end{description}
+My refined model is a deeper neural network, since the relations between stock prices are quite complicated. Thus, I added an additional LSTM layer and a second dense layer with 25 neurons. The refined model is run with different parameters, the first run is 10 neurons for both LSTM layers, the next run is 50 neurons for both layers and in my last model I am using 150 neurons and 5 epochs . All the time $n$ is kept at $30$ days.
 
-\subsubsection{Subsubsection}
+In table \ref{table.model} the model parameters are shown in an overview.
 
-\lipsum[13] % Dummy text
-
-\begin{itemize}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
-	\item First item in a list
-	\item Second item in a list
-	\item Third item in a list
-\end{itemize}
-
-\subsubsection{Subsubsection}
-
-\lipsum[14] % Dummy text
-
-\subsection{Implementation}
-
-\lipsum[15-23] % Dummy text
-
-\subsection{Refinement}
-
-\lipsum[15-23] % Dummy text
 
 \section{Results}
-\lipsum[15-23] % Dummy text
+As expected the $RMSE$ for the refined model is smaller than for the simple model. Furthermore the refined model 3 with 150 neurons per LSTM and 5 epochs also performed better than the refined model with less neurons. For comparison see the values for all four models in table \ref{tab:rsme}.
+\begin{table}[H]
+	\caption{The resulting $RMSE$ of the four models.}
+	\centering
+	\begin{tabular}{cr}
+	\hline 
+	Model & $RMSE$ \\ 
+	\hline 
+	simple & 37.83 \\ 
+	refined 1 & 28.34 \\ 
+	refined 2 & 9.59 \\ 
+	refined 3 & 3.74 \\ 
+	\hline 
+	\end{tabular} 
+	\label{tab:rsme}
+\end{table}
+The poor performance of the simple model can also seen in figure \ref{fig:simple} and \ref{fig:simple_zoom}. The prediction follows loosely the real price, however is much higher than the real price.
+\begin{figure}[ht]\centering
+	\includegraphics[width=\linewidth]{simple_model}
+	\caption{The prediction close price of the simple model versus the real close price.}
+	\label{fig:simple}
+\end{figure}
+
+\begin{figure}[ht]\centering
+	\includegraphics[width=\linewidth]{simple_model_zoom}
+	\caption{The prediction close price for the last 60 days of the simple model versus the real close price.}
+	\label{fig:simple_zoom}
+\end{figure}
+
 \section{Conclusion}
-\lipsum[15-23] % Dummy text
+
+
+
 
 
 %------------------------------------------------
