@@ -10,6 +10,7 @@
 
 
 ## Summary <a name="summary"></a>
+This is a summary of the following [paper](.\capstoneprojectdatascientist-1\blob\main\Paper\article3.pdf). There you find my complete text.
 Accurately predicting stock prices is a highly sought-after mastery. In recent years Long Short Term Memory (LSTM), a type of recurrent neural network, has proven to be highly promising in achieving better predictions. Using a simple LSTM with only 25 neurons already can predict loosely the future stock prices based on the stock prices of the previous 30 days. The refined model with two LSTM layers with 150 neurons and two dense layers is very successful in predicting the future close price.
 
 ### Project Definition
