@@ -12,7 +12,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 
 # Read in the previously generated Apple Stock Price File
-apple_stock_prices = pd.read_csv("apple.csv")
+apple_stock_prices = pd.read_csv("Data/apple.csv")
 apple_stock_prices["Date"] = pd.to_datetime(apple_stock_prices["Date"])
 
 
@@ -61,7 +61,7 @@ def test_train_set_generator1D(df, window_size, training_set_size=0.8):
     return x_train, x_test, y_train, y_test, train_data_len
 
 
-def plot_model_performance(train, test, detail_days=60):
+def plot_model_performance(train, test, detail_days=60, names='output'):
     """
     Plotting the predicted price vs the actual price. Including a second graph with a detail view
     (including detail_days last observations)
@@ -70,6 +70,7 @@ def plot_model_performance(train, test, detail_days=60):
     train...the training dataset
     test ... the testing dataset
     detail_days...how many last observations do you want to have displayed
+    names... name for the save file
     """
     plt.figure(figsize=(15, 10))
     plt.xlabel("Date", fontsize=25)
@@ -80,7 +81,7 @@ def plot_model_performance(train, test, detail_days=60):
     plt.plot(test["Date"], test["Predictions"])
 
     plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={'size': 15})
-
+    plt.savefig(names+'.png')
     plt.show()
     plt.figure(figsize=(15, 10))
     plt.xlabel("Date", fontsize=25)
@@ -95,7 +96,7 @@ def plot_model_performance(train, test, detail_days=60):
     plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={'size': 15})
 
     plt.show()
-
+    plt.savefig(names+'_detail.png')
     print(test.tail(abs(detail_days)))
 
 
@@ -147,7 +148,7 @@ def simple_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8):
 
     test["Predictions"] = pred
 
-    plot_model_performance(train, test, -50)
+    plot_model_performance(train, test, -50,'simple_units_'+str(units)+'_epochs_'+str(epochs))
 
 
 def refined_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8):
@@ -207,7 +208,7 @@ def refined_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8)
 
     test["Predictions"] = pred
 
-    plot_model_performance(train, test, -50)
+    plot_model_performance(train, test, -50,'refined_unit'+str(units)+'_epochs'+str(epochs))
 
 
 
