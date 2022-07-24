@@ -102,8 +102,8 @@ There should be no necessary  other libraries to run the code here beyond these.
   * [apple.csv](/Data/apple.csv) #Downloaded stock price date for apple
   * [get_data_analyze_date.py](/Data/get_data_analyze_date.py)
   * [stock_prices_10yrs.csv](/Data/stock_prices_10yrs.csv) # Stock prices for the last ten years for all tickers in the ticker_full.csv
-  * [ticker_full.csv](/Data/ticker_full.csv)
-* [Paper/](/Paper)
+  * [ticker_full.csv](/Data/ticker_full.csv) #List of randomly selected ticker and company names
+* [Paper/](/Paper) #Folder containing all files needed by LaTex to make the PDF
   * [Figures/](/Paper/Figures)
   * [article3.aux](/Paper/article3.aux)
   * [article3.bbl](/Paper/article3.bbl)
@@ -111,7 +111,7 @@ There should be no necessary  other libraries to run the code here beyond these.
   * [article3.dvi](/Paper/article3.dvi)
   * [article3.log](/Paper/article3.log)
   * [article3.out](/Paper/article3.out)
-  * [article3.pdf](/Paper/article3.pdf)
+  * [article3.pdf](/Paper/article3.pdf) #The only file of real interest, the final paper as pdf
   * [article3.synctex.gz](/Paper/article3.synctex.gz)
   * [article3.tex](/Paper/article3.tex)
   * [article3.toc](/Paper/article3.toc)
@@ -119,9 +119,9 @@ There should be no necessary  other libraries to run the code here beyond these.
   * [SelfArx.cls](/Paper/SelfArx.cls)
   * [texput.log](/Paper/texput.log)
 * [.gitignore](/.gitignore)
-* [main.py](/main.py)
+* [main.py](/main.py) #The main file needed to generate a model an predict prices.
 * [README.md](/README.md)
-* [results.ipynb](/results.ipynb)
+* [results.ipynb](/results.ipynb) #The code execution and results saved as notebook.
 
 All downloaded data is in the Data folder. It includes a python file with helper functions to download stock price information of any given ticker using yfinance. The stock_prices_10yrs.csv consists of all stock tickers in the ticker_full.csv. The apple.csv is the dataset that is used to train the model and predict prices. In the Paper folder are all the tex files needed to compile the paper yourself using latex.
 
