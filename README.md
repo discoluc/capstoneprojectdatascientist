@@ -10,7 +10,7 @@
 
 
 ## Summary <a name="summary"></a>
-Accurately predicting stock prices is a highly sought after mastery. In recent years Long Short Term Memory (LSTM), a type of recurrent neural network, have proven to be highly promising in achieving better predictions. Using a simple LSTM with only 25 neuros already is able to predict loosely the future stock prices based on the stock prices of the previous 30 day. The refined model with two LSTM layers with 150 neurons and two dense layer is very sucessful in predicting the future close price.
+Accurately predicting stock prices is a highly sought-after mastery. In recent years Long Short Term Memory (LSTM), a type of recurrent neural network, has proven to be highly promising in achieving better predictions. Using a simple LSTM with only 25 neurons already can predict loosely the future stock prices based on the stock prices of the previous 30 days. The refined model with two LSTM layers with 150 neurons and two dense layers is very successful in predicting the future close price.
 ## Installation <a name="installation"></a>
 The code only uses Pandas, Numpy, SciKit , Keras, Matplotly, Tensorflow  and was tested on a Python version 3.9.2.
 There should be no necessary  other libraries to run the code here beyond these.
@@ -61,9 +61,9 @@ There should be no necessary  other libraries to run the code here beyond these.
 * [README.md](.\capstoneprojectdatascientist-1\README.md)
 * [results.ipynb](.\capstoneprojectdatascientist-1\results.ipynb)
 
-All downloaded data is in the Data folder. It includes a python file with helper functions to download stock price information of any given ticker using yfinance. The stock_prices_10yrs.csv consists of all stock tickers in the ticker_full.csv. The apple.csv is the dataset which is used to train the model and to predict prices on. In the Paper folder are all the tex files needed to compile the paper yourself using latex.
+All downloaded data is in the Data folder. It includes a python file with helper functions to download stock price information of any given ticker using yfinance. The stock_prices_10yrs.csv consists of all stock tickers in the ticker_full.csv. The apple.csv is the dataset that is used to train the model and predict prices. In the Paper folder are all the tex files needed to compile the paper yourself using latex.
 
-Running the main.py runs a script which trains a model, tests it und saves graphs for each model. In the results.ipynb the results of my model is saved.
+Running the main.py runs a script that trains a model, tests it and saves graphs for each model. In the results.ipynb the results of my model are saved.
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 This scriptdeveloped during an exercise regarding the [Udacity Data Science Nanodegree](https://www.udacity.com/school-of-data-science), feel free to use the code as you like.
