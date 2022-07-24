@@ -119,7 +119,7 @@ There should be no necessary  other libraries to run the code here beyond these.
   * [SelfArx.cls](/Paper/SelfArx.cls)
   * [texput.log](/Paper/texput.log)
 * [.gitignore](/.gitignore)
-* [main.py](/main.py) #The main file needed to generate a model an predict prices.
+* [main.py](/main.py) #The main file needed to generate a model an predict prices
 * [README.md](/README.md)
 * [results.ipynb](/results.ipynb) #The code execution and results saved as notebook.
 
