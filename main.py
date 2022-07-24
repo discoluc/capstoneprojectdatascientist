@@ -73,19 +73,24 @@ def plot_model_performance(train, test, detail_days=60, names="output"):
     names... name for the save file
     """
     plt.figure(figsize=(15, 10))
-    plt.xlabel("Date", fontsize=25)
-    plt.ylabel("Close Price [in USD]", fontsize=25)
+    plt.xlabel("Date", fontsize=20)
+    plt.ylabel("Close Price [in USD]", fontsize=20)
     plt.gcf().autofmt_xdate(rotation=45)
+    plt.xticks(fontsize = 15)
+    plt.yticks(fontsize = 15)
     plt.plot(train["Date"], train["Close"])
     plt.plot(test["Date"], test["Close"])
     plt.plot(test["Date"], test["Predictions"])
 
-    plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={"size": 15})
+    plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={"size": 20})
     plt.savefig(names + ".png")
     plt.show()
+
     plt.figure(figsize=(15, 10))
-    plt.xlabel("Date", fontsize=25)
-    plt.ylabel("Close Price [in USD]", fontsize=25)
+    plt.xticks(fontsize = 15)
+    plt.yticks(fontsize = 15)
+    plt.xlabel("Date", fontsize=20)
+    plt.ylabel("Close Price [in USD]", fontsize=20)
     plt.gcf().autofmt_xdate(rotation=45)
 
     plt.plot(test["Date"][-abs(detail_days) :], test["Close"][-abs(detail_days) :])
@@ -93,7 +98,7 @@ def plot_model_performance(train, test, detail_days=60, names="output"):
         test["Date"][-abs(detail_days) :], test["Predictions"][-abs(detail_days) :]
     )
 
-    plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={"size": 15})
+    plt.legend(["Test", "Predictions"], loc="upper left", prop={"size": 20})
 
     plt.show()
     plt.savefig(names + "_detail.png")
