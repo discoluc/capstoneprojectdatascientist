@@ -61,7 +61,7 @@ def test_train_set_generator1D(df, window_size, training_set_size=0.8):
     return x_train, x_test, y_train, y_test, train_data_len
 
 
-def plot_model_performance(train, test, detail_days=60, names='output'):
+def plot_model_performance(train, test, detail_days=60, names="output"):
     """
     Plotting the predicted price vs the actual price. Including a second graph with a detail view
     (including detail_days last observations)
@@ -80,8 +80,8 @@ def plot_model_performance(train, test, detail_days=60, names='output'):
     plt.plot(test["Date"], test["Close"])
     plt.plot(test["Date"], test["Predictions"])
 
-    plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={'size': 15})
-    plt.savefig(names+'.png')
+    plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={"size": 15})
+    plt.savefig(names + ".png")
     plt.show()
     plt.figure(figsize=(15, 10))
     plt.xlabel("Date", fontsize=25)
@@ -93,10 +93,10 @@ def plot_model_performance(train, test, detail_days=60, names='output'):
         test["Date"][-abs(detail_days) :], test["Predictions"][-abs(detail_days) :]
     )
 
-    plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={'size': 15})
+    plt.legend(["Training", "Test", "Predictions"], loc="upper left", prop={"size": 15})
 
     plt.show()
-    plt.savefig(names+'_detail.png')
+    plt.savefig(names + "_detail.png")
     print(test.tail(abs(detail_days)))
 
 
@@ -148,7 +148,9 @@ def simple_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8):
 
     test["Predictions"] = pred
 
-    plot_model_performance(train, test, -50,'simple_units_'+str(units)+'_epochs_'+str(epochs))
+    plot_model_performance(
+        train, test, -50, "simple_units_" + str(units) + "_epochs_" + str(epochs)
+    )
 
 
 def refined_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8):
@@ -183,7 +185,6 @@ def refined_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8)
             units=units,
             activation="relu",
             return_sequences=False,
-          
         )
     )
     model.add(Dense(units=25))
@@ -208,8 +209,9 @@ def refined_model(df, epochs=1, units=32, window_size=30, training_set_size=0.8)
 
     test["Predictions"] = pred
 
-    plot_model_performance(train, test, -50,'refined_unit'+str(units)+'_epochs'+str(epochs))
-
+    plot_model_performance(
+        train, test, -50, "refined_unit" + str(units) + "_epochs" + str(epochs)
+    )
 
 
 # Second call of the simple model with more refined parameters
@@ -222,5 +224,3 @@ refined_model(data_scaled, epochs=1, units=50, window_size=30, training_set_size
 
 # Second call of the simple model with more refined parameters
 refined_model(data_scaled, epochs=5, units=150, window_size=30, training_set_size=0.8)
-
-
