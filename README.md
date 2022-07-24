@@ -16,14 +16,14 @@ Accurately predicting stock prices is a highly sought-after mastery. In recent y
 ### Project Definition
 The accurate forecast of stock prices, traded on an exchange, is inarguably one of the most challenging topics in the field of asset pricing. The stock market is described as an unpredictable, dynamic and non-linear construct. Predicting the prices of its stocks is an ambitious undertaking and depends on many variables including but not limited to the global economy, the company's metrics and local and global political situation. 
 
-Historically there are two main prediction methods. The fundamental analysis which is a qualitative analysis of the company is interested in finding the true value of a stock and comparing it to the actual traded value. The evaluator utilizes several performance criteria e.g. the P/E ratio to truly assess the underlying stock. Secondly, the technical analysis, which is solely based on the past price of the stock e.g. in form of closing or opening prices as time-series. It is rather a short-term prediction using factors like the Moving Average (MA) or the Exponential Moving Average (EMA). Its basic assumption is that every significant information about the stock is already considered in the stock price \cite{prediction}.
+Historically there are two main prediction methods. The fundamental analysis which is a qualitative analysis of the company is interested in finding the true value of a stock and comparing it to the actual traded value. The evaluator utilizes several performance criteria e.g. the P/E ratio to truly assess the underlying stock. Secondly, the technical analysis, which is solely based on the past price of the stock e.g. in form of closing or opening prices as time-series. It is rather a short-term prediction using factors like the Moving Average (MA) or the Exponential Moving Average (EMA). Its basic assumption is that every significant information about the stock is already considered in the stock price.
 
 The fast computational development has led to the point that Machine learning techniques have a significant application in financial problems. The use of artificial neural networks has found more and its way into the field of stock price prediction. Here a recurrent neural network (RNN) has been found very proven, more precisely the Long Short Term Memory (LSTM). Its advantage is being
 able to process entire sequences of data rather than only one single data point. It has proven to be very practical with time series data such as our historical stock prices. 
 
-In this project, I create an application that is going to predict the \textbf{closing price} of any given stock on which it is trained. For the sake of convenience, this report only considers the stock price prediction of the \textbf{Apple} Inc. (\textit{\$AAPL}) stock.
+In this project, I create an application that is going to predict the closing price of any given stock on which it is trained. For the sake of convenience, this report only considers the stock price prediction of the Apple Inc. $AAPL stock.
 
-A train-test cycle is used to test the accuracy of the prediction. The root mean squared error (\ref{eq.rmse}) is used to measure the accuracy of the model. The RMSE is a good measure to compare prediction with actual values and makes it easier to compare different models
+A train-test cycle is used to test the accuracy of the prediction. The root mean squared error is used to measure the accuracy of the model. The RMSE is a good measure to compare prediction with actual values and makes it easier to compare different models
 
 In the next section, I will analyze the data and give some insights about the data. Afterwords I will explain the methodology and discuss the results. In the end, I give an outlook for further developments and improvements.
 
@@ -98,30 +98,30 @@ There should be no necessary  other libraries to run the code here beyond these.
 
 ## Files <a name=files></a>
 
-* [Data/](.\capstoneprojectdatascientist-1\Data) # All the prepared data
-  * [apple.csv](.\capstoneprojectdatascientist-1\Data\apple.csv) #Downloaded stock price date for apple
-  * [get_data_analyze_date.py](.\capstoneprojectdatascientist-1\Data\get_data_analyze_date.py)
-  * [stock_prices_10yrs.csv](.\capstoneprojectdatascientist-1\Data\stock_prices_10yrs.csv) # Stock prices for the last ten years for all tickers in the ticker_full.csv
-  * [ticker_full.csv](.\capstoneprojectdatascientist-1\Data\ticker_full.csv)
-* [Paper/](.\capstoneprojectdatascientist-1\Paper)
-  * [Figures/](.\capstoneprojectdatascientist-1\Paper\Figures)
-  * [article3.aux](.\capstoneprojectdatascientist-1\Paper\article3.aux)
-  * [article3.bbl](.\capstoneprojectdatascientist-1\Paper\article3.bbl)
-  * [article3.blg](.\capstoneprojectdatascientist-1\Paper\article3.blg)
-  * [article3.dvi](.\capstoneprojectdatascientist-1\Paper\article3.dvi)
-  * [article3.log](.\capstoneprojectdatascientist-1\Paper\article3.log)
-  * [article3.out](.\capstoneprojectdatascientist-1\Paper\article3.out)
-  * [article3.pdf](.\capstoneprojectdatascientist-1\Paper\article3.pdf)
-  * [article3.synctex.gz](.\capstoneprojectdatascientist-1\Paper\article3.synctex.gz)
-  * [article3.tex](.\capstoneprojectdatascientist-1\Paper\article3.tex)
-  * [article3.toc](.\capstoneprojectdatascientist-1\Paper\article3.toc)
-  * [sample.bib](.\capstoneprojectdatascientist-1\Paper\sample.bib)
-  * [SelfArx.cls](.\capstoneprojectdatascientist-1\Paper\SelfArx.cls)
-  * [texput.log](.\capstoneprojectdatascientist-1\Paper\texput.log)
-* [.gitignore](.\capstoneprojectdatascientist-1\.gitignore)
-* [main.py](.\capstoneprojectdatascientist-1\main.py)
-* [README.md](.\capstoneprojectdatascientist-1\README.md)
-* [results.ipynb](.\capstoneprojectdatascientist-1\results.ipynb)
+* [Data/](/Data) # All the prepared data
+  * [apple.csv](/Data/apple.csv) #Downloaded stock price date for apple
+  * [get_data_analyze_date.py](/Data/get_data_analyze_date.py)
+  * [stock_prices_10yrs.csv](/Data/stock_prices_10yrs.csv) # Stock prices for the last ten years for all tickers in the ticker_full.csv
+  * [ticker_full.csv](/Data/ticker_full.csv)
+* [Paper/](/Paper)
+  * [Figures/](/Paper/Figures)
+  * [article3.aux](/Paper/article3.aux)
+  * [article3.bbl](/Paper/article3.bbl)
+  * [article3.blg](/Paper/article3.blg)
+  * [article3.dvi](/Paper/article3.dvi)
+  * [article3.log](/Paper/article3.log)
+  * [article3.out](/Paper/article3.out)
+  * [article3.pdf](/Paper/article3.pdf)
+  * [article3.synctex.gz](/Paper/article3.synctex.gz)
+  * [article3.tex](/Paper/article3.tex)
+  * [article3.toc](/Paper/article3.toc)
+  * [sample.bib](/Paper/sample.bib)
+  * [SelfArx.cls](/Paper/SelfArx.cls)
+  * [texput.log](/Paper/texput.log)
+* [.gitignore](/.gitignore)
+* [main.py](/main.py)
+* [README.md](/README.md)
+* [results.ipynb](/results.ipynb)
 
 All downloaded data is in the Data folder. It includes a python file with helper functions to download stock price information of any given ticker using yfinance. The stock_prices_10yrs.csv consists of all stock tickers in the ticker_full.csv. The apple.csv is the dataset that is used to train the model and predict prices. In the Paper folder are all the tex files needed to compile the paper yourself using latex.
 
