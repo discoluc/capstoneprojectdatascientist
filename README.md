@@ -1,4 +1,4 @@
-# Short Term Stock Price Prediction with Machine LEarning
+# Short Term Stock Price Prediction with Machine Learning
 ## Udacity Capstone Project
 
 ### Table of Contents
@@ -14,7 +14,7 @@ Accurately predicting stock prices is a highly sought after mastery. In recent y
 ## Installation <a name="installation"></a>
 The code only uses Pandas, Numpy, SciKit , Keras, Matplotly, Tensorflow  and was tested on a Python version 3.9.2.
 There should be no necessary  other libraries to run the code here beyond these.
-| **_Package_** | **Version** |
+| **Package** | **Version** |
 |---------------|-------------|
 | keras         | 2.9.0       |
 | matplotlib    | 3.5.1       |
@@ -26,7 +26,6 @@ There should be no necessary  other libraries to run the code here beyond these.
 
 
 ## Instructions <a name="instruction"></a>:
-## Instructions <a name="instruction"></a>:
 1. Financial stock data is already downloaded. This skip can be skipped, unless you want newer data. In the Data folder the Apple Stock prices are prepared until the 18th of July. If you want newer stock prices use the get_data_analyze_date.py and run the `get_hist_data(ticker, timeframe="max")` with a ticker of your choice (e.g. for Apple the ticker is "AAPL").
 
 
@@ -37,10 +36,10 @@ There should be no necessary  other libraries to run the code here beyond these.
 
 ## Files <a name=files></a>
 
-* [Data/](.\capstoneprojectdatascientist-1\Data)
+* [Data/](.\capstoneprojectdatascientist-1\Data) # All the prepared data
   * [apple.csv](.\capstoneprojectdatascientist-1\Data\apple.csv) #Downloaded stock price date for apple
   * [get_data_analyze_date.py](.\capstoneprojectdatascientist-1\Data\get_data_analyze_date.py)
-  * [stock_prices_10yrs.csv](.\capstoneprojectdatascientist-1\Data\stock_prices_10yrs.csv)
+  * [stock_prices_10yrs.csv](.\capstoneprojectdatascientist-1\Data\stock_prices_10yrs.csv) # Stock prices for the last ten years for all tickers in the ticker_full.csv
   * [ticker_full.csv](.\capstoneprojectdatascientist-1\Data\ticker_full.csv)
 * [Paper/](.\capstoneprojectdatascientist-1\Paper)
   * [Figures/](.\capstoneprojectdatascientist-1\Paper\Figures)
