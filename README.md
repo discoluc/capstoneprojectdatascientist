@@ -30,11 +30,11 @@ In the next section, I will analyze the data and give some insights about the da
 
 The dataset was collected with the help of yfinance
 python plugin. In my case, it is replacing the not working
-Yahoo Finance API. The collected data frame contains
-  • 1108837 rows
-  • 10 columns
-  • price information for 457 unique stocks
-  • Data of the last 10 years (including 17/07/2022)
+Yahoo Finance API. The collected data frame contains  
+  • 1108837 rows  
+  • 10 columns  
+  • price information for 457 unique stocks  
+  • Data of the last 10 years (including 17/07/2022)  
 and was collected on 18/07/2022. I use a list of 457 randomly
 selected stock tickers to generate the dataset.
 
