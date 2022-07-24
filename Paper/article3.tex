@@ -123,7 +123,7 @@ A train-test cycle is used to test the accuracy of the prediction. The root mean
 RMSE = \sqrt{\dfrac{\Sigma_{i}(\hat{y}_i-y_i)}{N}} 
 \label{eq.rmse}
 \end{equation}
-where $\hat{y}_i$ is the prediction of the $i-th$ stock price $y_i$ and $N$ is the total number of predicted stock prices.
+where $\hat{y}_i$ is the prediction of the $i-th$ stock price $y_i$ and $N$ is the total number of predicted stock prices. The RMSE is a good measure to compare prediction with actual values and makes it easier to compare different models
 
 In the next section, I will analyze the data and give some insights about the data. Afterwords I will explain the methodology and discuss the results. In the end, I give an outlook for further developments and improvements.
 
@@ -256,7 +256,7 @@ In table \ref{table.model} the model parameters are shown in an overview. In the
 	\hline 
 	Model & $RMSE$ \\ 
 	\hline 
-	simple & 37.83 \\ 
+	simple & 42.49 \\ 
 	refined 1 & 28.34 \\ 
 	refined 2 & 9.59 \\ 
 	refined 3 & 3.74 \\ 
@@ -332,6 +332,10 @@ The refined model 3 is the most accurate of my models. It has the lowest RMSE an
 In this paper, I looked at the problem of forecasting accurately stock prices. In the beginning, I give an overview of why this topic matters so much for the financial world. Additionally, I present some real-life data on the stock prices of Apple stock and some data insights before explaining the methodology. Stock prices can be treated as time-series data, thus LSTM neural networks are predestinated as a suitable algorithm for predicting stock prices. The simple model is falling quite short in predicting the stock prices, however, my most complicated model is roughly 11 times better than the simple one. 
 
 Even though the model is quite good at predicting stock prices, in a real-life scenario it probably will perform poorly due to unforeseen and disruptive events (e.g. COVID19 or Ukraine War).
+
+
+Generating test and training sets were more complex than usual since I am dealing with time series data. Also, I needed to put together a timeframe of past stock prices as my feature variables with its corresponding stock price prediction. This was quite tricky to generate.
+
 
 For future research, I will try and compare different machine learning algorithms and compare their performance with the LSMT. Furthermore one could try to play with the parameters, and layers in my current network to make even better predictions of the future stock price. Also, I will use different stocks and see if the performance of the models is going to change.
 

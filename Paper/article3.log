@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2022.7.15)  24 JUL 2022 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2022.7.15)  24 JUL 2022 15:50
 entering extended mode
 **./article3.tex
 (article3.tex
@@ -1065,56 +1065,59 @@ File: Figures//LSTM.png Graphic file (type png)
 <use Figures//LSTM.png>
 Package pdftex.def Info: Figures//LSTM.png  used on input line 203.
 (pdftex.def)             Requested size: 400.38872pt x 274.01114pt.
-
-Underfull \vbox (badness 2285) has occurred while \output is active []
-
  [2 <./Figures//closing.png>] [3 <./Figures//LSTM.png>]
 <Figures//simple_model.png, id=112, 908.39375pt x 566.115pt>
 File: Figures//simple_model.png Graphic file (type png)
 <use Figures//simple_model.png>
-Package pdftex.def Info: Figures//simple_model.png  used on input line 286.
+Package pdftex.def Info: Figures//simple_model.png  used on input line 285.
 (pdftex.def)             Requested size: 206.0563pt x 128.40695pt.
 <Figures//simple_model_zoom.png, id=113, 908.39375pt x 589.20125pt>
 File: Figures//simple_model_zoom.png Graphic file (type png)
 <use Figures//simple_model_zoom.png>
-Package pdftex.def Info: Figures//simple_model_zoom.png  used on input line 291
+Package pdftex.def Info: Figures//simple_model_zoom.png  used on input line 290
 .
 (pdftex.def)             Requested size: 206.0563pt x 133.64342pt.
 <Figures//refined.png, id=114, 908.39375pt x 566.115pt>
 File: Figures//refined.png Graphic file (type png)
 <use Figures//refined.png>
-Package pdftex.def Info: Figures//refined.png  used on input line 296.
+Package pdftex.def Info: Figures//refined.png  used on input line 295.
 (pdftex.def)             Requested size: 206.0563pt x 128.40695pt.
 <Figures//refined_zoom.png, id=115, 908.39375pt x 589.20125pt>
 File: Figures//refined_zoom.png Graphic file (type png)
 <use Figures//refined_zoom.png>
-Package pdftex.def Info: Figures//refined_zoom.png  used on input line 301.
+Package pdftex.def Info: Figures//refined_zoom.png  used on input line 300.
 (pdftex.def)             Requested size: 206.0563pt x 133.64342pt.
 <Figures//refined2.png, id=116, 908.39375pt x 566.115pt>
 File: Figures//refined2.png Graphic file (type png)
 <use Figures//refined2.png>
-Package pdftex.def Info: Figures//refined2.png  used on input line 306.
+Package pdftex.def Info: Figures//refined2.png  used on input line 305.
 (pdftex.def)             Requested size: 206.0563pt x 128.40695pt.
 <Figures//refined_zoom2.png, id=117, 908.39375pt x 589.20125pt>
 File: Figures//refined_zoom2.png Graphic file (type png)
 <use Figures//refined_zoom2.png>
-Package pdftex.def Info: Figures//refined_zoom2.png  used on input line 311.
+Package pdftex.def Info: Figures//refined_zoom2.png  used on input line 310.
 (pdftex.def)             Requested size: 206.0563pt x 133.64342pt.
 <Figures//refined3.png, id=118, 908.39375pt x 566.115pt>
 File: Figures//refined3.png Graphic file (type png)
 <use Figures//refined3.png>
-Package pdftex.def Info: Figures//refined3.png  used on input line 317.
+Package pdftex.def Info: Figures//refined3.png  used on input line 316.
 (pdftex.def)             Requested size: 206.0563pt x 128.40695pt.
 <Figures//refined_zoom3.png, id=119, 908.39375pt x 589.20125pt>
 File: Figures//refined_zoom3.png Graphic file (type png)
 <use Figures//refined_zoom3.png>
-Package pdftex.def Info: Figures//refined_zoom3.png  used on input line 322.
+Package pdftex.def Info: Figures//refined_zoom3.png  used on input line 321.
 (pdftex.def)             Requested size: 206.0563pt x 133.64342pt.
 
 
-LaTeX Warning: Float too large for page by 3.64107pt on input line 328.
+LaTeX Warning: Float too large for page by 3.64107pt on input line 327.
 
 (article3.bbl
+Underfull \hbox (badness 4060) in paragraph at lines 4--7
+\OT1/pcr/m/n/10 org / wiki / Stock _ market _ prediction$[][]\OT1/ptm/m/n/10 (+
+20) .  Ac-
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 9--13
 \OT1/pcr/m/n/10 org / wiki / Long _ short-[]term _ memory #
  []
@@ -1184,8 +1187,8 @@ Package rerunfilecheck Info: File `article3.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  29861 strings out of 478927
- 578342 string characters out of 2862386
- 997972 words of memory out of 3000000
+ 578345 string characters out of 2862386
+ 996972 words of memory out of 3000000
  46888 multiletter control sequences out of 15000+600000
  468933 words of font info for 308 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1201,7 +1204,7 @@ type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic
 am Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts
 /type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on article3.pdf (5 pages, 546978 bytes).
+Output written on article3.pdf (5 pages, 547193 bytes).
 PDF statistics:
  214 PDF objects out of 1000 (max. 8388607)
  26 named destinations out of 1000 (max. 500000)
