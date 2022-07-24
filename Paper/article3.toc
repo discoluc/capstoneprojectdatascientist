@@ -3,6 +3,6 @@
 \contentsline {section}{\numberline {2}Data Analysis}{1}{section.2}%
 \contentsline {section}{\numberline {3}Methodology}{2}{section.3}%
 \contentsline {section}{\numberline {4}Results}{3}{section.4}%
-\contentsline {section}{\numberline {5}Conclusion}{3}{section.5}%
-\contentsline {section}{References}{3}{section*.9}%
+\contentsline {section}{\numberline {5}Conclusion}{4}{section.5}%
+\contentsline {section}{References}{4}{section*.8}%
 \contentsfinish 
